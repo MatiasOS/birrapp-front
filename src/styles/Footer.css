@@ -1,0 +1,19 @@
+.App-footer {
+  background-color: #222;
+  padding: 10px;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content:center;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App-footer-text {
+  margin: 0px;
+}

@@ -1,0 +1,7 @@
+.Board{
+  flex-flow: column;
+  flex-grow: 0.99;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}

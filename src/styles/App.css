@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+
+.App-intro {
+  font-size: large;
+  color: white;
+}
+
+html {
+  background-color: #000;
+}

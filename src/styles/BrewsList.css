@@ -1,0 +1,11 @@
+.BrewsList {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+
+}
