@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import grafico from '../../public/chart.png';
+import grafico from '../../public/char3.png';
 
 class Graph extends Component {
 
