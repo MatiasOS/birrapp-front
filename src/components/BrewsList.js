@@ -8,14 +8,14 @@ class BrewsList extends Component {
     super(props, state);
     this.state={
       brews: this.props.data.brews,
-      beerActual: ""
+      beerActual: this.props.data.brews[0].beerName
     };
-    //this.handleClick = this.handleClick.bind(this);
   };
 
   handleClick = (event) =>  {
     this.setState({beerActual: event.target.value})
   }
+  
   render(){
     return(
       <div className="BrewsList">
