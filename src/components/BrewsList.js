@@ -6,17 +6,25 @@ import '../styles/List.css'
 
 
 class BrewsList extends Component {
-
-  constructor(props,state){
-    super(props, state);
-    this.state={
-      brews: this.props.data.brews,
-      beerActual: this.props.data.brews[0].beerName
-    };
-  };
-
+  constructor(){
+    super();
+    this.setState({
+      brews: brewStore.getAll(),
+      beerActual: 'The oldest one'
+    });
+  }
+  
   handleClick = (event) =>  {
     this.setState({beerActual: event.target.value})
+  }
+
+  componentWillMount(){
+    brewStore.on('change',()=>{
+      this.setState({
+        brews: brewStore.getAll(),
+        beerActual: 'The oldest one'
+      });
+    });
   }
 
   render(){

@@ -8,8 +8,8 @@ class Board extends Component {
   render(){
     return(
       <div className="Board">
-        <StagesList data={this.props.data}/>
-        <Graph data={this.props.data}/>
+        <StagesList/>
+        <Graph/>
       </div>
   )}
 }

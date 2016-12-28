@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
+import ingredientStore from '../stores/IngredientStore';
+
+
 import '../styles/IngredientsList.css';
+
 class IngredientsList extends Component {
-  constructor(props,state){
-    super(props, state);
-    this.state={
-      ingredients: this.props.data.ingredients
-    }
-  };
+  constructor(){
+    super();
+    this.setState({
+      ingredients: ingredientStore.getAll()
+    });
+  }
+  componentWillMount(){
+    ingredientStore.on('change',()=>{
+      this.setState({
+        ingredients: ingredientStore.getAll()
+      });
+    });
+  }
 
   render(){
     return(

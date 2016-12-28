@@ -28,3 +28,5 @@ var data = [
     "userId": "580d60ce308e440011e556ca"
   }
 ]
+
+export default data;

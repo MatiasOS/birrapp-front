@@ -12,9 +12,9 @@ class WorkSpace extends Component {
   render() {
     return (
       <div className="WorkSpace">
-        <BrewsList data={this.props.data}/>
-        <Board data={this.props.data}/>
-        <IngredientsList data={this.props.data}/>
+        <BrewsList />
+        <Board/>
+        <IngredientsList/>
       </div>
     );
   }
