@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import brewStore from '../stores/BrewStore';
 
 import '../styles/BrewsList.css'
 import '../styles/List.css'
+
+
 class BrewsList extends Component {
 
   constructor(props,state){
@@ -15,7 +18,7 @@ class BrewsList extends Component {
   handleClick = (event) =>  {
     this.setState({beerActual: event.target.value})
   }
-  
+
   render(){
     return(
       <div className="BrewsList">
