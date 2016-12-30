@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import data from '../data/measures';
-import dispatcher from '../dispatchers/dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher';
 
 
 class MeasureStore extends EventEmitter{
@@ -12,7 +12,7 @@ class MeasureStore extends EventEmitter{
   getAll(){
     return this.measures;
   }
-  
+
   handleActions = (action) =>  {
     console.log('Handle measure Action: '+ action);
   }
@@ -20,6 +20,6 @@ class MeasureStore extends EventEmitter{
 }
 
 const measureStore = new MeasureStore();
-dispatcher.register(measureStore.handleActions);
+Dispatcher.register(measureStore.handleActions);
 
 export default measureStore;

@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import data from '../data/stages';
-import dispatcher from '../dispatchers/dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher';
 
 class StageStore extends EventEmitter{
   constructor() {
@@ -17,5 +17,5 @@ class StageStore extends EventEmitter{
 }
 
 const stageStore = new StageStore();
-dispatcher.register(stageStore.handleActions);
+Dispatcher.register(stageStore.handleActions);
 export default stageStore;

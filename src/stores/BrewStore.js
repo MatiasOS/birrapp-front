@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 import data from '../data/brews';
-import dispatcher from '../dispatchers/dispatcher';
-
+import Dispatcher from '../dispatchers/Dispatcher';
+const moment = require('moment');
 
 class BrewStore extends EventEmitter{
   constructor() {
@@ -13,24 +13,33 @@ class BrewStore extends EventEmitter{
     return this.brews;
   }
 
-  createBrew(beerName, startDate, endDate, userId){
-    let id = Date.now();
+  createBrew(beerName){
+    console.log('createBrew: ' + beerName);
     this.brews.push({
+      "id": moment(),
+      "startDate": "9999-09-09T03:00:00.000Z",
+      "endDate": "9999-09-09T03:00:00.000Z",
       "beerName": beerName,
-      "startDate": startDate,
-      "endDate": endDate,
-      "id": id,
-      "userId": userId
+      "userId": "580d60ce308e440011e556ca"
     });
     this.emit('change');
   }
 
+
   handleActions = (action) =>  {
     console.log('Handle Brew Action: '+ action);
+    switch (action.type) {
+      case "CREATE_BREW":
+        this.createBrew(action.beerName);
+        break;
+      default:
+        break;
+    }
   }
 }
 
 
 const brewStore = new BrewStore();
-dispatcher.register(brewStore.handleActions);
+Dispatcher.register(brewStore.handleActions);
+
 export default brewStore;

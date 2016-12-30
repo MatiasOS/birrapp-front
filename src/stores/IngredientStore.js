@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import data from '../data/ingredients';
-import dispatcher from '../dispatchers/dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher';
 
 
 class IngredientStore extends EventEmitter{
@@ -32,5 +32,5 @@ class IngredientStore extends EventEmitter{
 }
 
 const ingredientStore = new IngredientStore();
-dispatcher.register(ingredientStore.handleActions);
+Dispatcher.register(ingredientStore.handleActions);
 export default ingredientStore;

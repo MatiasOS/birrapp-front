@@ -8,9 +8,8 @@ class Header extends Component {
   render(){
     return(
       <div className="App-header">
-        <h2>BirrApp</h2>
-        <FaBeer className='icon'></FaBeer>
-
+        <FaBeer className='icon spin swingimage'></FaBeer>
+        <span>BirrApp</span>
       </div>
     )};
 };

@@ -3,7 +3,31 @@
   padding: 20px;
   color: white;
   padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
 }
+
 .icon {
   font-size: 50px;
+  padding: 0px;
+  color: #666;
+}
+
+@-webkit-keyframes swinging{
+    0%{-webkit-transform: rotate(11deg);}
+    50%{-webkit-transform: rotate(-1deg)}
+    100%{-webkit-transform: rotate(11deg);}
+}
+
+@keyframes swinging{
+    0%{transform: rotate(11deg);}
+    50%{transform: rotate(-1deg)}
+    100%{transform: rotate(11deg);}
+}
+
+.swingimage{
+    -webkit-transform-origin: 60% 100%;
+    transform-origin: 60% 100%;
+    -webkit-animation: swinging 3s ease-in-out forwards infinite;
+    animation: swinging 3s ease-in-out forwards infinite;
 }

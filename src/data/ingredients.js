@@ -1,21 +1,21 @@
 var data = [
   {
-    "name": "noIngredientName",
+    "name": "Focusin rojo",
+    "value": 15,
+    "description": "noDesc",
+    "id": "string",
+    "stageId": "string"
+  },
+  {
+    "name": "Dientes",
     "value": -1,
     "description": "noDesc",
     "id": "string",
     "stageId": "string"
   },
   {
-    "name": "noIngredientName",
-    "value": -1,
-    "description": "noDesc",
-    "id": "string",
-    "stageId": "string"
-  },
-  {
-    "name": "noIngredientName",
-    "value": -1,
+    "name": "Frula",
+    "value": 166,
     "description": "noDesc",
     "id": "string",
     "stageId": "string"

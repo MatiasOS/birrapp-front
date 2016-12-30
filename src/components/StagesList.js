@@ -10,7 +10,7 @@ class StagesList extends Component {
     super();
     this.state = {
       stages:stageStore.getAll(),
-      beerActual: 'The first one'
+      stageActual: 'The first one'
     };
   }
 

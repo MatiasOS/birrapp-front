@@ -6,7 +6,10 @@ class Graph extends Component {
 
   render(){
     return(
-      <p className='App-header'> Algún día, en algún momento esto será un gráfico </p>
+      <div className='App-header'>
+      <p> Algún día, en algún momento...</p><br></br>
+      <p> esto será un gráfico </p>
+      </div>
   )}
 }
 

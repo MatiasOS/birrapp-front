@@ -1,13 +1,19 @@
-import { Dispatcher } from '../dispatchers/dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher';
 
 
-export function createBrew(beerName, startDate, endDate, userId){
+
+export function createBrew(beerName){
   Dispatcher.dispatch({
     type: 'CREATE_BREW',
     "beerName": beerName,
-    "startDate": startDate,
-    "endDate": endDate,
-    "userId": userId
+    }
+  );
+};
+
+export function deleteBrew(id){
+  Dispatcher.dispatch({
+    type: 'DELETE_BREW',
+    "id": id,
     }
   );
 };
