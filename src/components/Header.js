@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Header.css';
+import FaBeer from 'react-icons/lib/fa/beer';
+
 
 class Header extends Component {
 
@@ -7,9 +9,10 @@ class Header extends Component {
     return(
       <div className="App-header">
         <h2>BirrApp</h2>
-      </div>
+        <FaBeer className='icon'></FaBeer>
 
-    )}
-}
+      </div>
+    )};
+};
 
 export default Header;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import grafico from '../../public/char3.png';
+import '../styles/Header.css';
 
 class Graph extends Component {
 
 
   render(){
     return(
-      <img src={grafico} alt="Ejemplo de grafico" ></img>
+      <p className='App-header'> Algún día, en algún momento esto será un gráfico </p>
   )}
 }
 
