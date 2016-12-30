@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import brewStore from '../stores/BrewStore';
+import * as brewAction from '../actions/brewActions';
 
 import '../styles/BrewsList.css'
 import '../styles/List.css'
@@ -8,14 +9,18 @@ import '../styles/List.css'
 class BrewsList extends Component {
   constructor(){
     super();
-    this.setState({
+    this.state = {
       brews: brewStore.getAll(),
       beerActual: 'The oldest one'
-    });
-  }
-  
-  handleClick = (event) =>  {
+    };
+  };
+
+  handleChangeBeer = (event) =>  {
     this.setState({beerActual: event.target.value})
+  };
+
+  handleAddBeer = (event) =>{
+    brewAction.createBrew('beerName', 'startDate', 'endDate', Date.Now());
   }
 
   componentWillMount(){
@@ -25,7 +30,9 @@ class BrewsList extends Component {
         beerActual: 'The oldest one'
       });
     });
-  }
+  };
+
+
 
   render(){
     return(
@@ -39,7 +46,7 @@ class BrewsList extends Component {
                               type="submit"
                               value={d.beerName}
                               className="button"
-                              onClick={this.handleClick}>
+                              onClick={this.handleChangeBeer}>
                           </input> <br></br>
                         </div>
                         )
@@ -47,6 +54,6 @@ class BrewsList extends Component {
             }
     </div>
   )}
-}
+};
 
 export default BrewsList;

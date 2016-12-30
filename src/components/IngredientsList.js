@@ -7,9 +7,9 @@ import '../styles/IngredientsList.css';
 class IngredientsList extends Component {
   constructor(){
     super();
-    this.setState({
+    this.state = {
       ingredients: ingredientStore.getAll()
-    });
+    };
   }
   componentWillMount(){
     ingredientStore.on('change',()=>{

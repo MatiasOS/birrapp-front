@@ -8,10 +8,10 @@ import '../styles/List.css'
 class StagesList extends Component {
   constructor(){
     super();
-    this.setState({
+    this.state = {
       stages:stageStore.getAll(),
       beerActual: 'The first one'
-    });
+    };
   }
 
   handleClick = (event) =>  {
