@@ -26,7 +26,6 @@ class IngredientStore extends EventEmitter{
   };
 
   handleActions = (action) =>  {
-    console.log('Handle ingredient Action: '+ action);
   }
 
 }

@@ -23,7 +23,7 @@ class BrewsList extends Component {
   };
 
   handleAddBeer = (event) =>{
-    console.log(event);
+    console.log('apreté para crear. Name: ' + this.state.newBeer );
     brewAction.createBrew(this.state.newBeer);
     event.preventDefault();
   }
@@ -43,7 +43,7 @@ class BrewsList extends Component {
   }
 
   handleDelBeer = (event) =>{
-    this.setState({newBeer:event.target.value});
+    console.log('apreté para eliminar. Name: ' + this.state.newBeer );
     event.preventDefault();
   }
 

@@ -1,10 +1,39 @@
 import Dispatcher from '../dispatchers/Dispatcher'
+const moment = require('moment');
 
-export function createBrew (beerName) {
+export async function createBrew (beerName) {
+
+
+  console.log("Beer name in acrtion : " + beerName);
+  let raw = {
+        "beerName": beerName,
+        "startDate": moment(),
+        "endDate": "9999-09-09T03:00:00.000Z",
+        "userId": "580d60ce308e440011e556ca"
+      };
+
+  let data = new FormData();
+
+  data.append("json", JSON.stringify(raw));
+
+  let request = new Request('http://birrapp-back.herokuapp.com/api/brews',{
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(raw)
+    });
+
+  let response = await fetch(request);
+  let responseJson = await response.json();
+
   Dispatcher.dispatch({
     type: 'CREATE_BREW',
-    'beerName': beerName
-  })
+    beer: responseJson
+  });
+
+
 };
 
 export function deleteBrew (id) {

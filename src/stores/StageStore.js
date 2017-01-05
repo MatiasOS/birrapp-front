@@ -12,7 +12,6 @@ class StageStore extends EventEmitter{
     return this.stages;
   }
   handleActions = (action) =>  {
-    console.log('Handle stage Action: '+ action);
   }
 }
 

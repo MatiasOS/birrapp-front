@@ -14,7 +14,6 @@ class MeasureStore extends EventEmitter{
   }
 
   handleActions = (action) =>  {
-    console.log('Handle measure Action: '+ action);
   }
 
 }
