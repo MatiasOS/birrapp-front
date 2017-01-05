@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import stageStore from '../stores/StageStore';
+import React, { Component } from 'react'
+import stageStore from '../stores/StageStore'
+import '../styles/List.css'
+
 
 
 import '../styles/StagesList.css'
@@ -30,6 +32,7 @@ class StagesList extends Component {
   render(){
     return(
       <div className="StagesList">
+        <h4> Stage: {this.state.stageActual}</h4>
         {
           this.state.stages.map(function(d,i){
             return (
@@ -42,8 +45,15 @@ class StagesList extends Component {
             )
           },this)
         }
-        <br></br>
-        <h5> Stage: {this.state.stageActual}</h5>
+        <form className='Form'>
+          <input type="text" name="name" placeholder='Name' onChange={this.handleNameChange}/>
+          <input
+            type="submit"
+            value="Add!"
+            className="button"
+            onClick={this.handleAddIngredient}
+          />
+        </form>
       </div>
   )}
 }

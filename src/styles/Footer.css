@@ -7,6 +7,11 @@
   align-items: center;
   align-content:center;
   font-size: 11px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
 }
 
 a {

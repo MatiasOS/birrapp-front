@@ -7,3 +7,9 @@
   font-size: 13px;
   padding: 5px;
 }
+
+.Form{
+  border-radius: 5px;
+  border-width:thick;
+  border-color: #666;
+}

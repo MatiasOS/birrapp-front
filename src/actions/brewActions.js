@@ -1,19 +1,22 @@
-import Dispatcher from '../dispatchers/Dispatcher';
+import Dispatcher from '../dispatchers/Dispatcher'
 
-
-
-export function createBrew(beerName){
+export function createBrew (beerName) {
   Dispatcher.dispatch({
     type: 'CREATE_BREW',
-    "beerName": beerName,
-    }
-  );
+    'beerName': beerName
+  })
 };
 
-export function deleteBrew(id){
+export function deleteBrew (id) {
   Dispatcher.dispatch({
     type: 'DELETE_BREW',
-    "id": id,
-    }
-  );
+    'id': id
+  })
+};
+
+export function changeBrew (id) {
+  Dispatcher.dispatch({
+    type: 'CHANGE_BREW',
+    'id': id
+  })
 };

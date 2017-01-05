@@ -8,7 +8,6 @@ import '../styles/List.css';
 import FaBan from 'react-icons/lib/fa/ban';
 
 
-
 class BrewsList extends Component {
   constructor(){
     super();
@@ -46,14 +45,11 @@ class BrewsList extends Component {
   handleDelBeer = (event) =>{
     this.setState({newBeer:event.target.value});
     event.preventDefault();
-
   }
-
 
   render(){
     return(
       <div className="BrewsList">
-          <h5>CERVEZA</h5>
           <h4>{this.state.beerActual}</h4>
             {
               this.state.brews.map(function(d){
@@ -81,8 +77,8 @@ class BrewsList extends Component {
             value="Crear!"
             className="button"
             onClick={this.handleAddBeer}
-            />
-          </form>
+          />
+      </form>
     </div>
   )}
 };

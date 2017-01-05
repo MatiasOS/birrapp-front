@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import '../styles/App.css';
-import Header from './Header';
-import Footer from './Footer';
-import WorkSpace from './WorkSpace';
+import React, { Component } from 'react'
+import '../styles/App.css'
+import Header from './Header'
+import Footer from './Footer'
+import WorkSpace from './WorkSpace'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
-        <WorkSpace/>
+        <WorkSpace />
         <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

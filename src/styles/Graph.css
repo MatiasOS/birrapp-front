@@ -1,0 +1,8 @@
+.Graph{
+  display: flex;
+  flex-flow: column;
+  background-color: #222;
+  text-align: center;
+  justify-content: space-around;
+  align-content: space-around;
+}

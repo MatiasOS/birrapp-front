@@ -7,7 +7,7 @@ with react-create-app.
 ```
 Git clone this.
 npm install
-nodemon .
+npm start
 ```
 ### Prerequisites
 
@@ -17,6 +17,7 @@ What things you need to install the software and how to install them
 Git
 nodejs
 create-react-app
+reinstall
 ```
 
 ### Installing
@@ -60,8 +61,6 @@ Pending
 ## Authors
 
 * **Matías Oveja Smith** - *Initial work* - gitHub(https://github.com/MatiasOS)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 

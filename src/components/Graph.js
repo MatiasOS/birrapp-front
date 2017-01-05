@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import '../styles/Header.css';
+import React, { Component } from 'react'
+import '../styles/Graph.css'
 
 class Graph extends Component {
 
-
-  render(){
-    return(
-      <div className='App-header'>
-      <p> Algún día, en algún momento...</p><br></br>
-      <p> esto será un gráfico </p>
+  render () {
+    return (
+      <div className='Graph'>
+        <p> Algún día, en algún momento...</p><br />
+        <p> esto será un gráfico </p><br />
+        <p> ;) </p>
       </div>
-  )}
+    )
+  }
 }
 
-export default Graph;
+export default Graph

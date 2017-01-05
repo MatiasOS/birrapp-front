@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-import '../styles/WorkSpace.css';
+import React, { Component } from 'react'
+import '../styles/WorkSpace.css'
 
-import BrewsList from './BrewsList';
-import Board from './Board';
-import IngredientsList from './IngredientsList';
-
-
+import BrewsList from './BrewsList'
+import Board from './Board'
+import IngredientsList from './IngredientsList'
 
 class WorkSpace extends Component {
 
-  render() {
+  render () {
     return (
-      <div className="WorkSpace">
+      <div className='WorkSpace'>
         <BrewsList />
-        <Board/>
-        <IngredientsList/>
+        <Board />
+        <IngredientsList />
       </div>
-    );
+    )
   }
 }
 
-export default WorkSpace;
+export default WorkSpace
