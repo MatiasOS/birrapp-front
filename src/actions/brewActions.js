@@ -2,8 +2,6 @@ import Dispatcher from '../dispatchers/Dispatcher'
 const moment = require('moment');
 
 export async function createBrew (beerName) {
-
-
   console.log("Beer name in acrtion : " + beerName);
   let raw = {
         "beerName": beerName,
@@ -36,7 +34,15 @@ export async function createBrew (beerName) {
 
 };
 
-export function deleteBrew (id) {
+export async function deleteBrew (id) {
+  let request = new Request('https://birrapp-back.herokuapp.com/api/brews/'+id,{
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+    method: 'DELETE'
+    });
+    await fetch(request);
   Dispatcher.dispatch({
     type: 'DELETE_BREW',
     'id': id

@@ -1,8 +1,6 @@
 import { EventEmitter } from 'events';
 import Dispatcher from '../dispatchers/Dispatcher';
 
-const moment = require('moment');
-
 class BrewStore extends EventEmitter{
   constructor() {
     super();
@@ -20,16 +18,18 @@ class BrewStore extends EventEmitter{
   }
 
   deleteBrew(id){
-    this.brews.push({
-      "id": id,
-    });
+    let toDel = -1;
+    for (let i = 0; i < this.brews.length; i++) {
+      if (this.brews[i].id === id ) {
+        toDel = i;
+      }
+    }
+    this.brews.splice(toDel,1);
     this.emit('change');
   }
 
+
   changeBrew(id){
-    this.brews.push({
-      "id": moment(),
-    });
     this.emit('change');
   }
 

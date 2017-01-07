@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import brewStore from '../stores/BrewStore';
 import * as brewAction from '../actions/brewActions';
+import Brew from './Brew';
 
 import '../styles/BrewsList.css';
 import '../styles/List.css';
-
-import FaBan from 'react-icons/lib/fa/ban';
 
 
 class BrewsList extends Component {
@@ -42,10 +41,7 @@ class BrewsList extends Component {
 
   }
 
-  handleDelBeer = (event) =>{
-    console.log('apreté para eliminar. Name: ' + this.state.newBeer );
-    event.preventDefault();
-  }
+
 
   render(){
     return(
@@ -54,20 +50,9 @@ class BrewsList extends Component {
             {
               this.state.brews.map(function(d){
                 return (
-                        <div>
-                          <button className="button" onClick={this.handleDelBeer}>
-                            <FaBan></FaBan>
-                          </button>
-                          <input
-                              type="submit"
-                              value={d.beerName}
-                              className="button"
-                              onClick={this.handleChangeBeer}>
-                          </input>
-                          <br></br>
-                        </div>
+                        <Brew data={d} key={d.id}> </Brew>
                         )
-              },this)
+              })
             }
       <h4> Crear cerveza </h4>
       <form>
