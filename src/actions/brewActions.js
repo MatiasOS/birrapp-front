@@ -49,9 +49,10 @@ export async function deleteBrew (id) {
   })
 };
 
-export function changeBrew (id) {
+export function changeBrew (id,name) {
   Dispatcher.dispatch({
     type: 'CHANGE_BREW',
-    'id': id
+    'id': id,
+    'name': name
   })
 };

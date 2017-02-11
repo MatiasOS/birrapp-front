@@ -17,10 +17,6 @@ class BrewsList extends Component {
     };
   };
 
-  handleChangeBeer = (event) =>  {
-    this.setState({beerActual: event.target.value})
-  };
-
   handleAddBeer = (event) =>{
     console.log('apreté para crear. Name: ' + this.state.newBeer );
     brewAction.createBrew(this.state.newBeer);
@@ -30,7 +26,8 @@ class BrewsList extends Component {
   componentWillMount(){
     brewStore.on('change',() => {
       this.setState({
-        brews: brewStore.getAll()
+        brews: brewStore.getAll(),
+        beerActual:  brewStore.getActualName()
       });
     });
   };
@@ -41,18 +38,14 @@ class BrewsList extends Component {
 
   }
 
-
-
   render(){
     return(
       <div className="BrewsList">
           <h4>{this.state.beerActual}</h4>
             {
-              this.state.brews.map(function(d){
-                return (
-                        <Brew data={d} key={d.id}> </Brew>
-                        )
-              })
+              this.state.brews.map(
+                (d) => { return<Brew data={d} key={d.id}> </Brew>}
+                )
             }
       <h4> Crear cerveza </h4>
       <form>

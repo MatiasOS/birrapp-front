@@ -24,6 +24,9 @@ class Brew extends Component {
     brewAction.deleteBrew(this.state.id);
     event.preventDefault();
   }
+  handleChangeBeer = (event) => {
+    brewAction.changeBrew(this.state.id, this.state.beerName);
+  }
 
   render(){
     return (
