@@ -2,7 +2,6 @@ import Dispatcher from '../dispatchers/Dispatcher'
 const moment = require('moment');
 
 export async function createBrew (beerName) {
-  console.log("Beer name in acrtion : " + beerName);
   let raw = {
         "beerName": beerName,
         "startDate": moment(),

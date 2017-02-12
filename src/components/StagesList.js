@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import stageStore from '../stores/StageStore'
 import '../styles/List.css'
 
-import * as brewAction from '../actions/brewActions';
+import * as stageActions from '../actions/stageActions';
 
 import '../styles/StagesList.css'
 import '../styles/List.css'
@@ -12,7 +12,7 @@ class StagesList extends Component {
     super();
     this.state = {
       stages:stageStore.getAll(),
-      stageActual: 'The first one'
+      stageActual: ''
     };
   }
 
@@ -24,21 +24,20 @@ class StagesList extends Component {
     stageStore.on('change',()=>{
       this.setState({
         stages:stageStore.getAll(),
-        beerActual: 'The first one',
         newStage: ''
       });
     });
-  }
-  handleAddStage = (event) =>{
-    console.log('apreté para crear stage. Name: ' + this.state.newStage );
-    brewAction.createBrew(this.state.newStage);
-    event.preventDefault();
   }
 
   handleChange = (event) =>{
     this.setState({newStage:event.target.value});
     event.preventDefault();
 
+  }
+
+  handleAddStage = (event) => {
+    stageActions.addStage(this.state.newStage)
+    event.preventDefault();
   }
 
   render(){

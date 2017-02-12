@@ -17,6 +17,9 @@ class BrewStore extends EventEmitter{
   getActualName(){
     return this.beerActual;
   }
+  getActualId(){
+    return this.idActual;
+  }
 
   createBrew(beer){
     this.brews.push(beer);
@@ -45,7 +48,8 @@ class BrewStore extends EventEmitter{
       let response = await fetch('http://birrapp-back.herokuapp.com/api/brews');
       let responseJson = await response.json();
       this.brews = responseJson;
-      this.beerActual = this.brews[0].name
+      this.beerActual = this.brews[0].name;
+      this.idActual = this.brews[0].id;
       this.emit('change');
     } catch(error) {
       console.error(error);
@@ -62,7 +66,7 @@ class BrewStore extends EventEmitter{
         this.deleteBrew(action.beerName);
         break;
       case "CHANGE_BREW":
-        this.changeBrew(action.id, action,name);
+        this.changeBrew(action.id, action.name);
         break;
       default:
         break;

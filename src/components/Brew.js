@@ -25,6 +25,7 @@ class Brew extends Component {
     event.preventDefault();
   }
   handleChangeBeer = (event) => {
+    console.log(`Brew.js : change beer to ${this.state.id}, ${this.state.beerName}`)
     brewAction.changeBrew(this.state.id, this.state.beerName);
   }
 
