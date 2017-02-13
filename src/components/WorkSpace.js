@@ -3,7 +3,6 @@ import '../styles/WorkSpace.css'
 
 import BrewsList from './BrewsList'
 import Board from './Board'
-import IngredientsList from './IngredientsList'
 
 class WorkSpace extends Component {
 
@@ -12,7 +11,6 @@ class WorkSpace extends Component {
       <div className='WorkSpace'>
         <BrewsList />
         <Board />
-        <IngredientsList />
       </div>
     )
   }
