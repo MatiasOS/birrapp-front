@@ -27,13 +27,9 @@ class BrewStore extends EventEmitter{
   }
 
   deleteBrew(id){
-    let toDel = -1;
-    for (let i = 0; i < this.brews.length; i++) {
-      if (this.brews[i].id === id ) {
-        toDel = i;
-      }
-    }
-    this.brews.splice(toDel,1);
+    this.brews = this.brews.filter((elem) => {
+      return (elem.id != id);
+    })
     this.emit('change');
   }
 
@@ -63,7 +59,7 @@ class BrewStore extends EventEmitter{
         this.createBrew(action.beer);
         break;
       case "DELETE_BREW":
-        this.deleteBrew(action.beerName);
+        this.deleteBrew(action.id);
         break;
       case "CHANGE_BREW":
         this.changeBrew(action.id, action.name);
