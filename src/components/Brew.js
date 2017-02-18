@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import brewStore from '../stores/BrewStore';
  import * as brewAction from '../actions/brewActions';
 
 import '../styles/BrewsList.css';
